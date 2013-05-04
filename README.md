@@ -22,10 +22,11 @@ Include the script (or copy its content in your code)
 
 ### API ###
 
-The '''window''' object acts as the messenger.
+The **window** object acts as the messenger.
 
 Custom events can be fired from any script with:
 
+```js
     /**
     * @function window.hey
     * @param eventName (string)
@@ -34,16 +35,22 @@ Custom events can be fired from any script with:
     * @param cancelable (boolean - optional - true by default)
     */
     window.hey(eventName [, detail [ bubbles, [, cancelable]]])
-    
+```
+
 
 Custom events can be listened or ignored by any other script like this:
 
+```js
     window.addEventListener(eventName, callback);
     window.removeEventListener(eventname, callback);
+```
+
 
 The callback function can access to the "detail" of the event like this:
 
+```js
     window.removeEventListener(eventname, callback(e){alert(e.detail)});
+```
 
 
 ### DEMO ###
