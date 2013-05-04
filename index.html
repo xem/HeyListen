@@ -2,34 +2,39 @@
 <title>Hey! Listen</title>
 <script src="HeyListen.js"></script>
 <style>
-  h1 { text-align: center; }
-  div { width: 400px; height: 100px; border: 1px solid #000; margin: 10px auto; padding: 10px; text-align: center; }
+  html { background: #fed; }
+  body { margin: 10px auto; padding: 20px; width: 750px; border-radius: 20px; background: #fedcba; border: 1px solid #000; font-family: arial; }
+  h1, h3, p { text-align: center; }
+  div { width: 700px; height: 100px; border: 1px solid #000; background: #fff; border-radius: 20px; margin: 10px auto; padding: 10px; text-align: center; }
 </style>
 <h1>Hey! Listen!</h1>
+<h3>Play with those buttons to simulate events exchanged in a MVC architecture</h3>
 <div class=m>
   M
   <br>
-  <button onclick='hey("m")'>hey("m")</button>
+  <button onclick='window.hey("m")'>window.hey("m")</button>
   <br>
-  <button onclick='listen("v",function(){alert("m heard v")})'>listen("v",function(){alert("m heard v")})</button>
+  <button onclick='window.addEventListener("v",function(){alert("m heard v")})'>window.addEventListener("v",function(){alert("m heard v")})</button>
   <br>
-  <button onclick='listen("c",function(e){alert("m heard c. detail:"+e.detail)})'>listen("c",function(e){alert("m heard c. detail:"+e.detail)})</button>
+  <button onclick='window.addEventListener("c",function(e){alert(this);alert("m heard c. detail:"+e.detail)})'>window.addEventListener("c",function(e){alert("m heard c. detail:"+e.detail)})</button>
 </div>
 <div class=v>
   V
   <br>
-  <button onclick='hey("v")'>hey("v")</button>
+  <button onclick='window.hey("v")'>window.hey("v")</button>
   <br>
-  <button onclick='listen("m",function(){alert("v heard m")})'>listen("m",function(){alert("v heard m")})</button>
+  <button onclick='window.addEventListener("m",function(){alert("v heard m")})'>window.addEventListener("m",function(){alert("v heard m")})</button>
   <br>
-  <button onclick='listen("c",function(e){alert("v heard c. detail:"+e.detail)})'>listen("c",function(e){alert("v heard c. detail: "+e.detail)})</button>
+  <button onclick='window.addEventListener("c",function(e){alert("v heard c. detail:"+e.detail)})'>window.addEventListener("c",function(e){alert("v heard c. detail: "+e.detail)})</button>
 </div>
 <div class=c>
   C
   <br>
-  <button onclick='hey("c","my c details")'>hey("c","my c details")</button>
+  <button onclick='window.hey("c","my c details")'>window.hey("c","my c details")</button>
   <br>
-  <button onclick='listen("m",function(){alert("c heard and m and fired");hey("c")})'>listen("m",function(){alert("c heard and m and fired");hey("c")})</button>
+  <button onclick='window.addEventListener("m",function(){alert("c heard and m and fired");window.hey("c","my c details")})'>window.addEventListener("m",function(){alert("c heard and m and fired");window.hey("c","my c details")})</button>
   <br>
-  <button onclick='listen("v",function(){alert("c heard and v and fired");hey("c")})'>listen("v",function(){alert("c heard and v and fired");hey("c")})</button>
+  <button onclick='window.addEventListener("v",function(){alert("c heard and v and fired");window.hey("c","my c details")})'>window.addEventListener("v",function(){alert("c heard and v and fired");window.hey("c","my c details")})</button>
 </div>
+<br>
+<p>By <a href="http://twitter.com/MaximeEuziere">Maxime Euzière</a> - <a href="http://github.com/xem/HeyListen">Fork me on Github</a></p>
