@@ -7,7 +7,7 @@ Hey! Listen! is:
 
 * A cross-browser solution to generate custom events in JavaScript. It's therefore ideal to manage data exchanges in a MVC architecture, and in many other design patterns.
 * Working on IE9+, Firefox 11+, Chrome 15+, Opera 11+, Safari 535+.
-* Only 227 bytes.
+* Only 158 bytes.
 * Totally unrelated with Zelda.
 
 
@@ -31,10 +31,8 @@ Custom events can be fired from any script with:
     * @function window.hey
     * @param eventName (string)
     * @param detail (any javascript object - optional - undefined by default)
-    * @param bubbles (boolean - optional - true by default)
-    * @param cancelable (boolean - optional - true by default)
     */
-    window.hey(eventName [, detail [ bubbles, [, cancelable]]])
+    window.hey(eventName [, detail])
 ```
 
 

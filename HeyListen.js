@@ -1,1 +1,1 @@
-window.hey=function(e,d,b,c,t){if(b===undefined)b=!0;if(c===undefined)c=!0;try{t=new CustomEvent(e,{detail:d,bubbles:b,cancelable:c})}catch(r){t=document.createEvent("Event");t.initEvent(e,b,c);t.detail=d}this.dispatchEvent(t)}
+window.hey=function(e,d,t){try{t=new CustomEvent(e,{detail:d})}catch(r){t=document.createEvent("Event");t.initEvent(e,!0,!0);t.detail=d}this.dispatchEvent(t)}
