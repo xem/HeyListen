@@ -2,8 +2,10 @@
 <title>Hey! Listen</title>
 <script src="HeyListen.js"></script>
 <style>
-  div{ width: 500px; height: 100px; border: 1px solid #000; margin: 10px auto; padding: 10px; }
+  h1 { text-align: center; }
+  div { width: 400px; height: 100px; border: 1px solid #000; margin: 10px auto; padding: 10px; text-align: center; }
 </style>
+<h1>Hey! Listen!</h1>
 <div class=m>
   M
   <br>
@@ -11,7 +13,7 @@
   <br>
   <button onclick='listen("v",function(){alert("m heard v")})'>listen("v",function(){alert("m heard v")})</button>
   <br>
-  <button onclick='listen("c",function(){alert("m heard c")})'>listen("c",function(){alert("m heard c")})</button>
+  <button onclick='listen("c",function(e){alert("m heard c. detail:"+e.detail)})'>listen("c",function(e){alert("m heard c. detail:"+e.detail)})</button>
 </div>
 <div class=v>
   V
@@ -20,12 +22,12 @@
   <br>
   <button onclick='listen("m",function(){alert("v heard m")})'>listen("m",function(){alert("v heard m")})</button>
   <br>
-  <button onclick='listen("c",function(){alert("v heard c")})'>listen("c",function(){alert("v heard c")})</button>
+  <button onclick='listen("c",function(e){alert("v heard c. detail:"+e.detail)})'>listen("c",function(e){alert("v heard c. detail: "+e.detail)})</button>
 </div>
 <div class=c>
   C
   <br>
-  <button onclick='hey("c")'>hey("c")</button>
+  <button onclick='hey("c","my c details")'>hey("c","my c details")</button>
   <br>
   <button onclick='listen("m",function(){alert("c heard and m and fired");hey("c")})'>listen("m",function(){alert("c heard and m and fired");hey("c")})</button>
   <br>
